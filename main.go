@@ -2,10 +2,12 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/rs/zerolog/log"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	_ "oauthServer/docs"
 	"oauthServer/handler"
+	"oauthServer/pkg/ginConfig"
 	"oauthServer/pkg/ginServer"
 )
 
@@ -25,7 +27,7 @@ import (
 ///// @BasePath /
 func main() {
 	ginServer.Default()
-	g := gin.Default()
+	g := ginConfig.Default()
 	url := ginSwagger.URL("http://localhost:8000/swagger/doc.json") // The url pointing to API definition
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler, url))
 	// wolf-rbac插件 适配apisix网关的接口
@@ -41,6 +43,7 @@ func main() {
 		wolf.GET("/user_info", func(c *gin.Context) {
 
 		})
+		//wolf.GET("/logout",)
 	}
 
 	// 标准oauth2 端点可以不实现
@@ -56,5 +59,8 @@ func main() {
 		auth.GET("/check_token", ginServer.ValidationBearerToken)
 		auth.POST("/check_token", ginServer.ValidationBearerToken)
 	}
-	g.Run(":8000")
+	// Listen and Server in 0.0.0.0:8080
+	if err := g.Run(":8000"); err != nil {
+		log.Fatal().Msg("无法从 8000 端口启动服务")
+	}
 }

@@ -30,7 +30,7 @@ var (
 // @Produce  json
 // @Router /wolf/rbac/access_check [get]
 func AccessCheckHandler(c *gin.Context) {
-	utils.FmtRequest(os.Stdout, "AccessCheckHandler", c.Request) // Ignore the error
+	utils.FmtRequest(os.Stdout, "AccessCheckHandler", c.Request, c.Writer) // Ignore the error
 	log.Println("resName：", c.Query("resName"), c.Query("appID"), c.Query("action"), c.Query("clientIP"))
 	ctx := c.Request.Context()
 	token := c.GetHeader("X-Rbac-Token")

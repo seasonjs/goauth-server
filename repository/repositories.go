@@ -6,6 +6,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 	"oauthServer/entity"
+	"oauthServer/pkg/logger"
 	"sync"
 	"time"
 )
@@ -46,6 +47,7 @@ func NewRepositories() *Repositories {
 
 func newGormClient() *gorm.DB {
 	db, err := gorm.Open(mysql.Open(address), &gorm.Config{
+		Logger: logger.GormConfig(),
 		NamingStrategy: schema.NamingStrategy{
 			//TablePrefix: "t_",   // 表名前缀，`User`表为`t_users`
 			SingularTable: true, // 使用单数表名，启用该选项后，`User` 表将是`user`
