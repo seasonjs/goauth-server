@@ -8,7 +8,7 @@ require (
 	github.com/gin-contrib/logger v0.2.0
 	github.com/gin-contrib/requestid v0.0.1
 	github.com/gin-gonic/gin v1.7.2
-	github.com/go-oauth2/oauth2/v4 v4.4.0
+	github.com/go-oauth2/oauth2/v4 v4.4.1
 	github.com/go-oauth2/redis/v4 v4.1.1
 	github.com/go-openapi/jsonreference v0.19.6 // indirect
 	github.com/go-openapi/spec v0.20.3 // indirect

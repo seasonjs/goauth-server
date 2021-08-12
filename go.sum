@@ -76,8 +76,8 @@ github.com/gin-gonic/gin v1.6.3/go.mod h1:75u5sXoLsGZoRN5Sgbi1eraJ4GU3++wFwWzhwv
 github.com/gin-gonic/gin v1.7.2 h1:Tg03T9yM2xa8j6I3Z3oqLaQRSmKvxPd6g/2HJ6zICFA=
 github.com/gin-gonic/gin v1.7.2/go.mod h1:jD2toBW3GZUr5UMcdrwQA10I7RuaFOl/SGeDjXkfUtY=
 github.com/go-oauth2/oauth2/v4 v4.1.0/go.mod h1:+rsyi0o/ZbSfhL/3Xr/sAtL4brS+IdGj86PHVlPjE+4=
-github.com/go-oauth2/oauth2/v4 v4.4.0 h1:EO5wSTf+LOWxV7ROUNhoAcohYdsh3xjxip3vuP2nr4M=
-github.com/go-oauth2/oauth2/v4 v4.4.0/go.mod h1:K4DemYzNwwYnIDOPdHtX/7SlO0AHdtlphsTgE7lA3PA=
+github.com/go-oauth2/oauth2/v4 v4.4.1 h1:R4ZA43AThtjgHxIvfhqmNNeS4Gi26vwKjIQ7gjHR9Q8=
+github.com/go-oauth2/oauth2/v4 v4.4.1/go.mod h1:K4DemYzNwwYnIDOPdHtX/7SlO0AHdtlphsTgE7lA3PA=
 github.com/go-oauth2/redis/v4 v4.1.1 h1:uYLGPbAEZ3tb2Qg+BHzrtMHbJ7NeX6S9Ol0+iYyBF5E=
 github.com/go-oauth2/redis/v4 v4.1.1/go.mod h1:cYNT5bLEwCnrFXqSbWDvxXzfTaF/fKMf1XoRVFwBPrc=
 github.com/go-openapi/jsonpointer v0.17.0/go.mod h1:cOnomiV+CVVwFLk0A/MExoFMjwdsUdVpsRhURCKh+3M=
