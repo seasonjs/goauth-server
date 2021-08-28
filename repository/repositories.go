@@ -11,22 +11,21 @@ import (
 	"time"
 )
 
+var (
+	address      = "root:123456@tcp(127.0.0.1:3306)/oauth-server?charset=utf8&parseTime=True&loc=Local"
+	addr         = "localhost:6379"
+	once         sync.Once
+	repositories *Repositories
+)
+
+// Repositories 持久化
 type Repositories struct {
 	//mysql 实现
 	UserRepository       UserRepository
 	RoleRepository       RoleRepository
 	PermissionRepository PermissionRepository
 	//redis 实现
-	//db                  *gorm.DB
 }
-
-var (
-	address      = "root:123456@tcp(127.0.0.1:3306)/oauth-server?charset=utf8&parseTime=True&loc=Local"
-	addr         = "localhost:6379"
-	once         sync.Once
-	repositories *Repositories
-	//ctx     = context.Background()
-)
 
 // NewRepositories 生成 Go 持久化api
 func NewRepositories() *Repositories {
@@ -83,10 +82,14 @@ func newGormClient() *gorm.DB {
 
 	// SetConnMaxLifetime 设置了连接可复用的最大时间。
 	sqlDB.SetConnMaxLifetime(time.Hour)
+
+	//db.WithContext(ctx)
+
 	return db
 	// Output: key value
 	// key2 does not exist
 }
+
 func newRedisClient() *redis.Client {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     addr,
