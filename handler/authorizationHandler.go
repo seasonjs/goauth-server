@@ -7,8 +7,6 @@ import (
 	"oauthServer/pkg/ginServer"
 	"oauthServer/pkg/rbac"
 	"oauthServer/repository"
-	"oauthServer/utils"
-	"os"
 	"strconv"
 	"time"
 )
@@ -30,8 +28,6 @@ var (
 // @Produce  json
 // @Router /wolf/rbac/access_check [get]
 func AccessCheckHandler(c *gin.Context) {
-	utils.FmtRequest(os.Stdout, "AccessCheckHandler", c.Request, c.Writer) // Ignore the error
-	log.Println("resName：", c.Query("resName"), c.Query("appID"), c.Query("action"), c.Query("clientIP"))
 	ctx := c.Request.Context()
 	token := c.GetHeader("X-Rbac-Token")
 	tokenInfo, err := gServer.Manager.LoadAccessToken(ctx, token)
