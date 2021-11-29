@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  redis:
+    image: redis
+  mysql:
+    image: mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=123456
+  
+  
+ 
